@@ -11,17 +11,19 @@ export default function Hero({ onOpenInquiry, onOpenBrochure }: HeroProps) {
       id="beranda"
       className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center bg-[#121212] text-[#FAF8F5] overflow-hidden pt-24 pb-16"
     >
-      {/* Background Photography with Cinema Dark Gradient Overlays */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Photography with Cinema Dark Gradient Overlays - Satu Kesatuan */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2000&auto=format&fit=crop"
           alt="IPB International Convention Center Dian Grand Ballroom"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-110"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.45] contrast-[1.08] saturate-[1.1] transition-transform duration-1000 ease-out"
+          referrerPolicy="no-referrer"
         />
-        {/* Multilayer Dark Cinematic Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/60 to-[#121212]/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/90 via-transparent to-[#121212]/90" />
-        <div className="absolute inset-0 bg-grid-subtle opacity-40 pointer-events-none" />
+        {/* Seamless Architectural Overlay Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/55 to-[#121212]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/80 via-transparent to-[#121212]/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(18,18,18,0.85)_100%)]" />
+        <div className="absolute inset-0 bg-grid-subtle opacity-30 pointer-events-none" />
       </div>
 
       {/* Hero Content Container */}

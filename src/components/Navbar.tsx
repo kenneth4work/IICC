@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Calendar, Download, ChevronRight } from 'lucide-react';
+import logoImage from '../assets/images/regenerated_image_1789439231923.png';
 
 interface NavbarProps {
   onOpenInquiry: (roomName?: string) => void;
@@ -38,37 +39,29 @@ export default function Navbar({ onOpenInquiry, onOpenBrochure }: NavbarProps) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
-          {/* Brand Logo / Crest */}
+          {/* Brand Logo - Unified Picture */}
           <a
             href="#"
-            className="group flex items-center gap-3.5 focus:outline-none"
+            className="group flex items-center focus:outline-none transition-transform duration-300 hover:scale-[1.02]"
             aria-label="IPB International Convention Center Home"
           >
-            {/* Monogram Crest */}
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-sm border border-[#C5A059]/60 flex items-center justify-center bg-[#121212]/80 group-hover:border-[#C5A059] transition-all duration-300 shadow-sm relative overflow-hidden">
-              <span className="font-serif-luxury text-[#C5A059] text-base md:text-lg font-semibold tracking-wider">
-                IICC
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#C5A059]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-
-            <div className="flex flex-col">
-              <span className="font-serif-luxury text-sm md:text-base font-medium tracking-[0.18em] uppercase text-[#FAF8F5] leading-tight group-hover:text-[#DFC184] transition-colors">
-                IPB International
-              </span>
-              <span className="text-[10px] md:text-[11px] font-sans tracking-[0.26em] uppercase text-[#C5A059] font-semibold">
-                Convention Center • Bogor
-              </span>
-            </div>
+            <img
+              src={logoImage}
+              alt="IPB International Convention Center Bogor"
+              className={`w-auto object-contain object-left filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] transition-all duration-300 ${
+                isScrolled ? 'h-9 sm:h-10 md:h-11' : 'h-11 sm:h-12 md:h-14'
+              }`}
+              referrerPolicy="no-referrer"
+            />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[13px] font-medium tracking-[0.08em] text-[#F5F5F3]/85 uppercase">
+          <nav className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-7 xl:gap-8 text-[12.5px] font-medium tracking-[0.12em] text-[#FAF8F5]/85 uppercase">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="relative py-1 hover:text-[#C5A059] transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300"
+                className="relative py-1 hover:text-[#C5A059] transition-colors duration-200 whitespace-nowrap after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#C5A059] hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
               </a>

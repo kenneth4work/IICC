@@ -1,4 +1,5 @@
 import { ArrowUp, Award, CheckCircle, Mail, MapPin, Phone, Shield } from 'lucide-react';
+import logoImage from '../assets/images/regenerated_image_1789439231923.png';
 
 interface FooterProps {
   onOpenBrochure: () => void;
@@ -20,20 +21,13 @@ export default function Footer({ onOpenBrochure, onOpenInquiry }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Column 1: Brand & Identity (5 cols) */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="flex items-center gap-3.5 mb-6">
-              <div className="w-11 h-11 rounded-sm border border-[#C5A059] flex items-center justify-center bg-[#181818]">
-                <span className="font-serif-luxury text-[#C5A059] text-lg font-semibold tracking-wider">
-                  IICC
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif-luxury text-base font-medium tracking-[0.16em] uppercase text-[#FAF8F5]">
-                  IPB International
-                </span>
-                <span className="text-[10px] font-sans tracking-[0.26em] uppercase text-[#C5A059] font-semibold">
-                  Convention Center • Bogor
-                </span>
-              </div>
+            <div className="flex items-center mb-6">
+              <img
+                src={logoImage}
+                alt="IPB International Convention Center Bogor"
+                className="h-11 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
+                referrerPolicy="no-referrer"
+              />
             </div>
 
             <p className="text-xs text-[#F5F5F3]/70 font-sans leading-relaxed max-w-md mb-6">
