@@ -1,0 +1,6 @@
+{
+  "name": "IPB International Convention Center",
+  "description": "Ultra-luxury landing page mockup for IPB International Convention Center (IICC) in Bogor, featuring grand ballrooms, meeting suites, and world-class event hospitality.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

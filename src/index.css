@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', 'Fraunces', Georgia, serif;
+    --font-editorial: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #1A1A18;
+    background-color: #FAF8F5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+  }
+
+  .font-editorial-luxury {
+    font-family: var(--font-editorial);
+  }
+}
+
+/* Luxury Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glassmorphism */
+.glass-header {
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-header-light {
+  background: rgba(250, 248, 245, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card-dark {
+  background: rgba(26, 26, 26, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+/* Subtle gold shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #DFCA9B 0%, #C5A059 50%, #9E7B3B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A059 0%, #B89047 50%, #9E7B3B 100%);
+}
+
+.gold-border-glow:hover {
+  box-shadow: 0 12px 32px -8px rgba(197, 160, 89, 0.18);
+  border-color: rgba(197, 160, 89, 0.45);
+}
+
+/* Architectural placeholder gradients & pattern */
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+}
+
+.bg-dark-mesh {
+  background-color: #121212;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(197, 160, 89, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(158, 123, 59, 0.06) 0px, transparent 50%);
+}
+
