@@ -1,11 +1,17 @@
-import { ArrowDown, Calendar, FileText, MapPin, Sparkles } from 'lucide-react';
+import { ArrowDown, Calendar, Compass, MapPin, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   onOpenInquiry: () => void;
-  onOpenBrochure: () => void;
 }
 
-export default function Hero({ onOpenInquiry, onOpenBrochure }: HeroProps) {
+export default function Hero({ onOpenInquiry }: HeroProps) {
+  const scrollToFacilities = () => {
+    const facilitiesElement = document.getElementById('fasilitas');
+    if (facilitiesElement) {
+      facilitiesElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="beranda"
@@ -48,22 +54,22 @@ export default function Hero({ onOpenInquiry, onOpenBrochure }: HeroProps) {
           dan kemewahan tata jamuan berstandar diplomasi internasional.
         </p>
 
-        {/* Dual CTA Buttons with smooth hover scaling */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto mb-14">
+        {/* Perfectly Symmetrical Dual CTA Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full max-w-lg mb-14">
           <button
             onClick={onOpenInquiry}
-            className="w-full sm:w-auto px-8 py-4 bg-[#C5A059] text-[#121212] font-semibold text-xs tracking-[0.18em] uppercase rounded-sm hover:bg-[#DFC184] hover:shadow-[0_0_24px_rgba(197,160,89,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5"
+            className="w-full sm:flex-1 py-4 px-6 bg-[#C5A059] text-[#121212] font-semibold text-xs tracking-[0.16em] uppercase rounded-sm hover:bg-[#DFC184] hover:shadow-[0_0_24px_rgba(197,160,89,0.35)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5 text-center shadow-lg whitespace-nowrap"
           >
-            <Calendar className="w-4 h-4" />
-            Jadwalkan Kunjungan Lokasi
+            <Calendar className="w-4 h-4 shrink-0" />
+            <span>Kunjungan Lokasi</span>
           </button>
 
           <button
-            onClick={onOpenBrochure}
-            className="w-full sm:w-auto px-8 py-4 border border-[#C5A059]/60 text-[#FAF8F5] hover:text-[#C5A059] hover:border-[#C5A059] font-medium text-xs tracking-[0.18em] uppercase rounded-sm bg-[#121212]/40 backdrop-blur-sm transition-all duration-300 hover:bg-[#C5A059]/10 flex items-center justify-center gap-2.5"
+            onClick={scrollToFacilities}
+            className="w-full sm:flex-1 py-4 px-6 border border-[#C5A059]/60 text-[#FAF8F5] hover:text-[#C5A059] hover:border-[#C5A059] font-medium text-xs tracking-[0.16em] uppercase rounded-sm bg-[#121212]/40 backdrop-blur-sm transition-all duration-300 hover:bg-[#C5A059]/10 flex items-center justify-center gap-2.5 text-center whitespace-nowrap"
           >
-            <FileText className="w-4 h-4 text-[#C5A059]" />
-            Unduh Brosur & Denah Ruang
+            <Compass className="w-4 h-4 text-[#C5A059] shrink-0" />
+            <span>Eksplorasi Fasilitas</span>
           </button>
         </div>
 

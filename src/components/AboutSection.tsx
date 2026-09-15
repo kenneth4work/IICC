@@ -66,7 +66,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Column: Architectural Photography Frame & Floating Statistics Badge */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative pb-8 lg:pb-0">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Outer decorative gold frame offset */}
               <div className="absolute -top-4 -right-4 w-full h-full border border-[#C5A059]/40 rounded-sm pointer-events-none hidden sm:block" />
@@ -77,28 +77,32 @@ export default function AboutSection() {
                   src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=900&auto=format&fit=crop"
                   alt="IPB International Convention Center Bogor Architectural View"
                   className="w-full h-[460px] sm:h-[540px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/80 via-transparent to-transparent" />
                 
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium block mb-1">
+                {/* Top Editorial Caption - completely separate from bottom badge */}
+                <div className="absolute top-0 inset-x-0 p-6 bg-gradient-to-b from-[#121212]/90 via-[#121212]/45 to-transparent z-10">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-semibold block mb-1">
                     Bogor Botanical Landmark
                   </span>
-                  <p className="font-serif-luxury text-lg text-white font-normal">
+                  <p className="font-serif-luxury text-base sm:text-lg text-white font-normal leading-snug">
                     Pemandangan Eksklusif Siluet Gunung Salak & Lanskap Kebun Raya
                   </p>
                 </div>
+
+                {/* Bottom subtle gradient for depth */}
+                <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#121212]/50 to-transparent pointer-events-none" />
               </div>
 
-              {/* Floating Overlapping Statistics Badge */}
-              <div className="absolute -bottom-8 -left-4 sm:-left-8 bg-[#121212] text-[#FAF8F5] p-6 rounded-sm border border-[#C5A059]/40 shadow-2xl max-w-[260px] sm:max-w-[280px]">
-                <div className="flex items-center gap-2 text-[#C5A059] mb-2">
-                  <Award className="w-5 h-5 text-[#C5A059]" />
+              {/* Floating Overlapping Statistics Badge - Cleanly positioned without collision */}
+              <div className="absolute -bottom-6 -left-3 sm:-bottom-8 sm:-left-6 bg-[#121212] text-[#FAF8F5] p-5 sm:p-6 rounded-sm border border-[#C5A059]/50 shadow-2xl max-w-[260px] sm:max-w-[280px] z-20">
+                <div className="flex items-center gap-2 text-[#C5A059] mb-1.5">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5 text-[#C5A059]" />
                   <span className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#DFC184]">
                     Excellence Mark
                   </span>
                 </div>
-                <div className="font-serif-luxury text-3xl font-bold text-[#FAF8F5] leading-none mb-1">
+                <div className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#FAF8F5] leading-none mb-1">
                   15+ Tahun
                 </div>
                 <p className="text-xs text-[#FAF8F5]/70 font-sans leading-relaxed">

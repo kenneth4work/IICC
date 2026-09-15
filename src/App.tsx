@@ -12,12 +12,10 @@ import CtaBand from './components/CtaBand';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import FacilityModal from './components/FacilityModal';
-import BrochureModal from './components/BrochureModal';
 import { Facility } from './types';
 
 export default function App() {
   const [selectedFacility, setSelectedFacility] = useState<Facility | null>(null);
-  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const [inquiryPreselectedRoom, setInquiryPreselectedRoom] = useState<string | undefined>(undefined);
 
   const handleOpenInquiry = (roomName?: string) => {
@@ -32,17 +30,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#1A1A18] selection:bg-[#C5A059]/20 selection:text-[#9E7B3B]">
-      {/* 1. Navigation Bar */}
+      {/* 1. Symmetrical Navigation Bar */}
       <Navbar
         onOpenInquiry={() => handleOpenInquiry()}
-        onOpenBrochure={() => setIsBrochureOpen(true)}
       />
 
       <main>
-        {/* 2. Hero Section */}
+        {/* 2. Hero Section with Balanced CTA Actions */}
         <Hero
           onOpenInquiry={() => handleOpenInquiry()}
-          onOpenBrochure={() => setIsBrochureOpen(true)}
         />
 
         {/* 3. Marquee / Partner Banner */}
@@ -78,11 +74,10 @@ export default function App() {
 
       {/* 12. Footer */}
       <Footer
-        onOpenBrochure={() => setIsBrochureOpen(true)}
         onOpenInquiry={() => handleOpenInquiry()}
       />
 
-      {/* Interactive Detail Modals */}
+      {/* Interactive Detail Modal */}
       <FacilityModal
         facility={selectedFacility}
         onClose={() => setSelectedFacility(null)}
@@ -90,11 +85,6 @@ export default function App() {
           setSelectedFacility(null);
           handleOpenInquiry(roomName);
         }}
-      />
-
-      <BrochureModal
-        isOpen={isBrochureOpen}
-        onClose={() => setIsBrochureOpen(false)}
       />
     </div>
   );

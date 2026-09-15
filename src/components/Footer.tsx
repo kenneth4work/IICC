@@ -2,11 +2,10 @@ import { ArrowUp, Award, CheckCircle, Mail, MapPin, Phone, Shield } from 'lucide
 import logoImage from '../assets/images/regenerated_image_1789439231923.png';
 
 interface FooterProps {
-  onOpenBrochure: () => void;
   onOpenInquiry: () => void;
 }
 
-export default function Footer({ onOpenBrochure, onOpenInquiry }: FooterProps) {
+export default function Footer({ onOpenInquiry }: FooterProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -118,16 +117,8 @@ export default function Footer({ onOpenBrochure, onOpenInquiry }: FooterProps) {
               </li>
               <li>
                 <button
-                  onClick={onOpenBrochure}
-                  className="hover:text-[#C5A059] transition-colors text-left"
-                >
-                  Unduh E-Katalog & Denah
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={onOpenInquiry}
-                  className="text-[#C5A059] hover:underline transition-colors text-left"
+                  className="text-[#C5A059] hover:underline transition-colors text-left font-medium"
                 >
                   Konsultasi Gratis
                 </button>
